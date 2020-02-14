@@ -1,0 +1,15 @@
+<h1> <%= @heroine.super_name %> </h1>
+<font size="+2"> Real Name: </font> <%= @heroine.name %> <br><br>
+<%= link_to "Return to Index", heroines_path %><br>
+
+<h2> <%= link_to "Powers", powers_path %>  </h2>
+<ul>
+<% if @powers.length >0 %>
+<% @powers.each do |p| %>
+   <li><%= p.name.capitalize %></li>
+   <%= p.description.capitalize %><br>
+<%end%>
+<% else %>
+   <li>No Powers Listed</li>
+<% end %>
+</ul>

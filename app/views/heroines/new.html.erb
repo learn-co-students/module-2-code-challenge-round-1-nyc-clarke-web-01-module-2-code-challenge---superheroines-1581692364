@@ -1,0 +1,15 @@
+<h1> New Heroine Creation Page </h1>
+
+<% if flash[:errors] %>
+   <font size="+2"> Error:</font> <br>
+   <%= flash[:errors].join(', ') %>
+<% end %>
+
+<ul>
+<%= form_for @heroine do |f| %>
+   <li> Name: <%= f.text_field :name %> </li>
+   <li> Super Name: <%= f.text_field :super_name %> </li>
+   <li> Select Power: <%= collection_select :joiner, :power_id, Power.all, :id, :name %></li>
+   <%= f.submit %>
+<% end %>
+</ul>
